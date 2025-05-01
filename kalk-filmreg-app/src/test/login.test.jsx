@@ -17,14 +17,17 @@ it("loggar in och visar filmer med alla fält", async () => {
   fireEvent.change(screen.getByPlaceholderText(/Lösenord/i), {
     target: { value: "AgilaGrupp3" },
   });
-  fireEvent.click(screen.getByRole("button", { name: /Logga in och hämta filmer/i }));
+  fireEvent.click(
+    screen.getByRole("button", { name: /Logga in och hämta filmer/i })
+  );
   await waitFor(() => {
     expect(screen.getByText(/Inception/)).toBeInTheDocument();
     expect(screen.getByText(/Interstellar/)).toBeInTheDocument();
-    expect(screen.getAllByText(/Regissör: Christopher Nolan/)).toHaveLength(2); // Updated
-    expect(screen.getByText(/Beskrivning: En drömheistfilm/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Regissör: Christopher Nolan/)).toHaveLength(2);
+    expect(
+      screen.getByText(/Beskrivning: En drömheistfilm/)
+    ).toBeInTheDocument();
     expect(screen.getByText(/Produktionsår: 2010/)).toBeInTheDocument();
-    // Removed the second expect for "Regissör: Christopher Nolan" since it's redundant
     expect(screen.getByText(/Beskrivning: En rymdresa/)).toBeInTheDocument();
     expect(screen.getByText(/Produktionsår: 2014/)).toBeInTheDocument();
   });
@@ -38,7 +41,9 @@ it("visar felmeddelande vid misslyckad inloggning", async () => {
   fireEvent.change(screen.getByPlaceholderText(/Lösenord/i), {
     target: { value: "fel" },
   });
-  fireEvent.click(screen.getByRole("button", { name: /Logga in och hämta filmer/i }));
+  fireEvent.click(
+    screen.getByRole("button", { name: /Logga in och hämta filmer/i })
+  );
   await waitFor(() => {
     expect(screen.getByText(/Inloggning misslyckades/)).toBeInTheDocument();
   });

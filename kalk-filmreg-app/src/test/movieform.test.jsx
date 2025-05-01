@@ -1,5 +1,13 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { describe, it, expect, vi, beforeAll, afterEach, afterAll } from "vitest";
+import {
+  describe,
+  it,
+  expect,
+  vi,
+  beforeAll,
+  afterEach,
+  afterAll,
+} from "vitest";
 import { server } from "./mocks/server";
 import MovieForm from "../components/MovieForm";
 
