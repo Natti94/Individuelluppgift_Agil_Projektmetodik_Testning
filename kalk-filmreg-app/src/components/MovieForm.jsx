@@ -36,7 +36,7 @@ export default function MovieForm({ token, onMovieCreated }) {
 
   return (
     <>
-      <h3>Skapa ny film</h3>
+      <h3 className="skapa-film">Skapa ny film</h3>
       <input
         type="text"
         placeholder="Titel"

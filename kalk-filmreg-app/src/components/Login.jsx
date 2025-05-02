@@ -43,7 +43,6 @@ export default function Login() {
 
   return (
     <>
-      <h2>Logga in</h2>
       <input
         type="text"
         placeholder="Användarnamn"
@@ -59,7 +58,6 @@ export default function Login() {
       <button onClick={handleLogin}>Logga in och hämta filmer</button>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {token && <MovieForm token={token} onMovieCreated={handleMovieCreated} />}
-      <h3>Filmer</h3>
       <ul>
         {movies.map((m) => (
           <li key={m.id}>

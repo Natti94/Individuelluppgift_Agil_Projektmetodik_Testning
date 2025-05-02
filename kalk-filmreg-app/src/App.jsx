@@ -1,4 +1,4 @@
-import Counter from "./components/Counter";
+import Counter from "./components/calculator";
 import Login from "./components/Login";
 import "./App.css";
 
