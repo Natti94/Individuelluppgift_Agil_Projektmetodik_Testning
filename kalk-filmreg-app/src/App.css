@@ -1,3 +1,4 @@
+/* DETTA ÄR FÖR SKOJ SKULL :) */
 body {
   margin: 0;
   padding: 0;
@@ -48,6 +49,10 @@ h2,
 h3 {
   color: #444;
   margin-bottom: 15px;
+}
+
+.skapa-film {
+  margin-left: 350px;
 }
 
 .calculator {

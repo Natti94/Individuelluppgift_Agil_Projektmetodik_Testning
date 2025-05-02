@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+/* DETTA ÄR FÖR SKOJ SKULL :) */
 export default function MovieForm({ token, onMovieCreated }) {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");

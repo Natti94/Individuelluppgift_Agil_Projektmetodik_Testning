@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MovieForm from "./MovieForm";
-
+// DETTA ÄR FÖR SKOJ SKULL :)
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -45,13 +45,13 @@ export default function Login() {
     <>
       <input
         type="text"
-        placeholder="Användarnamn"
+        placeholder="Användarnamn.. Skriv 'AgilaGrupp3'"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
-        placeholder="Lösenord"
+        placeholder="Lösenord.. Skriv 'AgilaGrupp3'"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
