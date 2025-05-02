@@ -3,7 +3,7 @@ import { setupServer } from "msw/node";
 
 export const server = setupServer(
   http.post("/token-service/v1/request-token", async ({ request }) => {
-    const body = await request.json(); 
+    const body = await request.json();
     const { username, password } = body;
     if (username === "AgilaGrupp3" && password === "AgilaGrupp3") {
       return new HttpResponse("mocked-jwt-token", { status: 200 });

@@ -1,17 +1,29 @@
-import React from "react";
 import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Counter from "../components/Counter";
+import Calculator from "../components/Calculator";
 
-describe("Counter-komponent", () => {
-  it("visar 0 från början", () => {
-    render(<Counter />);
-    expect(screen.getByText("0")).toBeInTheDocument();
+describe("Calculator-komponent", () => {
+  it("adderar två tal korrekt", () => {
+    render(<Calculator />);
+    fireEvent.change(screen.getByRole("textbox", { name: /num1/i }), {
+      target: { value: "5" },
+    });
+    fireEvent.change(screen.getByRole("textbox", { name: /num2/i }), {
+      target: { value: "3" },
+    });
+    fireEvent.click(screen.getByText("+"));
+    expect(screen.getByText("Resultat: 8")).toBeInTheDocument();
   });
 
-  it("ökar med 1 efter klick", () => {
-    render(<Counter />);
-    fireEvent.click(screen.getByText("Öka"));
-    expect(screen.getByText("1")).toBeInTheDocument();
+  it("hanterar division med 0", () => {
+    render(<Calculator />);
+    fireEvent.change(screen.getByRole("textbox", { name: /num1/i }), {
+      target: { value: "10" },
+    });
+    fireEvent.change(screen.getByRole("textbox", { name: /num2/i }), {
+      target: { value: "0" },
+    });
+    fireEvent.click(screen.getByText("/"));
+    expect(screen.getByText("Kan inte dela med 0")).toBeInTheDocument();
   });
 });
