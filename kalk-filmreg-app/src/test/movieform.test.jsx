@@ -11,7 +11,7 @@ import {
 import { server } from "./mocks/server";
 import MovieForm from "../components/MovieForm";
 import { http, HttpResponse } from "msw";
-// DETTA ÄR FÖR SKOJ SKULL :)
+
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());

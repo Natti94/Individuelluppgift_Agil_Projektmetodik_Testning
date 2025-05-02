@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MovieForm from "./MovieForm";
-// DETTA ÄR FÖR SKOJ SKULL :)
+
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

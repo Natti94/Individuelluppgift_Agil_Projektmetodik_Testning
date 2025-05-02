@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
-// DETTA ÄR FÖR SKOJ SKULL :)
+
 export const server = setupServer(
   http.post("/token-service/v1/request-token", async ({ request }) => {
     const body = await request.json();

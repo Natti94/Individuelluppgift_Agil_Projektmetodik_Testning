@@ -4,7 +4,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { server } from "./mocks/server";
 import Login from "../components/Login";
 import "whatwg-fetch";
-// DETTA ÄR FÖR SKOJ SKULL :)
+
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
